@@ -19,7 +19,7 @@ const createPreviewer =
   process.env.SLDS_PREVIEWER === 'development'
     ? require('../../design-system-previewer')
     : require('@salesforce-ux/design-system-previewer');
-
+var PORT = process.env.PORT || 3003;
 const previewer = createPreviewer({
   // where are your static assets
   publicPath: {
@@ -34,7 +34,7 @@ const previewer = createPreviewer({
 });
 
 const listen = () =>
-  previewer.listen(3003, ({ server, emit }) => {
+  previewer.listen(PORT, ({ server, emit }) => {
     const emitReady = _.once(() => emit('ready'));
     const emitStyles = done => {
       emit('styles');
