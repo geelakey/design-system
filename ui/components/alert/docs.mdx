@@ -9,26 +9,24 @@ import Blockquote from '../../../shared/components/Blockquote';
 Alerts
 
 <div className="lead">
-  Alert banners communicate a state that affects the entire system, not just a feature or page. It persists over a session and appears without the user initiating the action.
+  Alerts are the Design System method of providing extra relevant information to the user and an optional related action.
+
+Alerts are composed of a background colour, solid left edge on mobile, copy and an optional button. Alerts can be associated with specific list items, or appear separately in the alert relates to something wider.
+
 </div>
 
-## Default/Info Alert
+## FYI Alert
 
-Use the info alert when notifying the user of neutral information about the system.
+FYI alerts are used to share non-critical information that users will still find useful. The colour of an FYI alert is the interactive colour of the chosen colour palette for that page.
 
 <Example title="Alert Informational">
   <CodeView>
     <Alert type="info">
-      <UtilityIcon
-        containerClassName="slds-m-right_x-small"
-        className="slds-icon_x-small"
-        assistiveText={false}
-        symbol="user"
-      />
-      <h2>
-        Logged in as John Smith (johnsmith@acme.com).{' '}
-        <a href="javascript:void(0);">Log out</a>
-      </h2>
+
+     <h2>
+     Your bill has been consistent for the last 3 months.{' '}
+      <a href="javascript:void(0);" className="alert-link">Setup Direct Debit</a>
+    </h2>
     </Alert>
   </CodeView>
 </Example>
@@ -49,65 +47,50 @@ Use the info alert when notifying the user of neutral information about the syst
   <span className="slds-assistive-text">Info</span>
 </CodeBlock>
 
-## Warning Alert
+## Critical Alert
 
-Use the warning variant to warn the user about important system information that deserves caution.
+Critical alerts are used to display critical information, and always appear in System Red. Critical alerts can have an action associated inside the alert, which is a Secondary button in System Red.
 
 <Example title="Alert Warning">
   <CodeView>
     <Alert type="warning">
-      <UtilityIcon
-        containerClassName="slds-m-right_x-small"
-        className="slds-icon_x-small"
-        assistiveText={false}
-        symbol="warning"
-      />
-      <h2>
-        Your browser is outdated. Your Salesforce experience may be degraded.{' '}
-        <a href="javascript:void(0);">More Information</a>
-      </h2>
+
+     <h2>
+        Please pay the outstanding amount now or arrange an extension.{' '}
+          <a href="javascript:void(0);"  className="alert-link">Setup Direct Debit</a>
+        </h2>
     </Alert>
   </CodeView>
 </Example>
 
-## Error Alert
+## Error Inline Alert
 
 Use the error variant when you need to alert the user about an error in the system that needs immediate attention.
 
 <Example title="Alert Error">
   <CodeView>
     <Alert type="error">
-      <UtilityIcon
-        containerClassName="slds-m-right_x-small"
-        className="slds-icon_x-small"
-        assistiveText={false}
-        symbol="error"
-      />
-      <h2>
-        Your browser is currently not supported. Your Salesforce may be
-        degraded. <a href="javascript:void(0);">More Information</a>
-      </h2>
+
+        <h2>
+       <b> Elliots Business Visa   </b> <span className="alert-accent">Card expires soon</span>
+        </h2>
     </Alert>
   </CodeView>
 </Example>
 
-## Offline Alert
+## Recommendation Alert
 
-Use the offline alert to let the user know that they are not connected to the internet.
+Recommendation alerts are used to notify user of a recommendation and don't have a specific action attached.
 
-<Example title="Alert Offline">
+<Example title="Alert Recommendation">
   <CodeView>
-    <Alert type="offline">
-      <UtilityIcon
-        containerClassName="slds-m-right_x-small"
-        className="slds-icon_x-small"
-        assistiveText={false}
-        symbol="offline"
-      />
-      <h2>
-        You are in offline mode.{' '}
-        <a href="javascript:void(0);">More Information</a>
-      </h2>
+    <Alert type="recommendation">
+
+   <h2>
+       <b>Monthly Pass{' '}</b>
+       <p>$16.99 with 2 weeks for free.</p>
+        <span  className="alert-accent">Recommended for you</span>
+        </h2>
     </Alert>
   </CodeView>
 </Example>

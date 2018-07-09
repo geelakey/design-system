@@ -24,12 +24,12 @@ export let Alert = props => {
     >
       <span className="slds-assistive-text">{type || 'info'}</span>
       {children}
-      <ButtonIcon
+      {/* <ButtonIcon
         className="slds-notify__close slds-button_icon-inverse"
         symbol="close"
         assistiveText="Close"
         title="Close"
-      />
+      /> */}
     </div>
   );
 };
@@ -40,70 +40,51 @@ export let Alert = props => {
 
 export default (
   <Alert type="info">
-    <UtilityIcon
-      containerClassName="slds-m-right_x-small"
-      className="slds-icon_x-small"
-      assistiveText={false}
-      symbol="user"
-    />
     <h2>
-      Logged in as John Smith (johnsmith@acme.com).{' '}
-      <a href="javascript:void(0);">Log out</a>
+      Your bill has been consistent for the last 3 months.{' '}
+      <a href="javascript:void(0);" className="alert-link">
+        Setup Direct Debit
+      </a>
     </h2>
   </Alert>
 );
 
 export let states = [
   {
-    id: 'warning',
-    label: 'Warning',
+    id: 'critical',
+    label: 'Critical',
     element: (
       <Alert type="warning">
-        <UtilityIcon
-          containerClassName="slds-m-right_x-small"
-          className="slds-icon_x-small"
-          assistiveText={false}
-          symbol="warning"
-        />
         <h2>
-          Your browser is outdated. Your Salesforce experience may be degraded.{' '}
-          <a href="javascript:void(0);">More Information</a>
+          Please pay the outstanding amount now or arrange an extension.{' '}
+          <a href="javascript:void(0);" className="alert-link">
+            Setup Direct Debit
+          </a>
         </h2>
       </Alert>
     )
   },
   {
-    id: 'error',
-    label: 'Error',
+    id: 'error inline',
+    label: 'Error inline',
     element: (
       <Alert type="error">
-        <UtilityIcon
-          containerClassName="slds-m-right_x-small"
-          className="slds-icon_x-small"
-          assistiveText={false}
-          symbol="error"
-        />
         <h2>
-          Your browser is currently not supported. Your Salesforce may be
-          degraded. <a href="javascript:void(0);">More Information</a>
+          <b> Elliots Business Visa </b>{' '}
+          <span className="alert-accent">Card expires soon</span>
         </h2>
       </Alert>
     )
   },
   {
-    id: 'offline',
-    label: 'Offline',
+    id: 'recommendation',
+    label: 'Recommendation',
     element: (
-      <Alert type="offline">
-        <UtilityIcon
-          containerClassName="slds-m-right_x-small"
-          className="slds-icon_x-small"
-          assistiveText={false}
-          symbol="offline"
-        />
+      <Alert type="recommendation">
         <h2>
-          You are in offline mode.{' '}
-          <a href="javascript:void(0);">More Information</a>
+          <b>Monthly Pass </b>
+          <p>$16.99 with 2 weeks for free.</p>
+          <span className="alert-accent">Recommended for you</span>
         </h2>
       </Alert>
     )
