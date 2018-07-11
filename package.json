@@ -22,7 +22,7 @@
       "indexName": "summer-18"
     }
   },
-  "devDependencies": {
+  "dependencies": {
     "@salesforce-ux/build-server-api": "2.0.2",
     "@salesforce-ux/create-snap": "0.0.6",
     "@salesforce-ux/design-system-markup": "2.0.2",
@@ -68,7 +68,7 @@
     "glob": "7.1.1",
     "gulp": "4.0.0",
     "gulp-autoprefixer": "3.1.1",
-    "gulp-axe-webdriver": "1.4.0",
+
     "gulp-cached": "1.1.1",
     "gulp-cli": "2.0.1",
     "gulp-concat": "2.6.1",
@@ -160,8 +160,9 @@
     "dist": "npm run gulp -- dist",
     "gulp": "babel-node ./node_modules/gulp/bin/gulp.js",
     "lint": "npm run gulp -- lint",
-    "postinstall": "npm run build",
+    "preinstall": "git config --global url.'https://'.insteadOf git://",
     "start": "npm run previewer",
+    "postinstall": "npm run build",
     "previewer": "babel-node scripts/previewer",
     "previewer-dev": "SLDS_PREVIEWER=development babel-node scripts/previewer",
     "stats": "npm run gulp -- stylestats",

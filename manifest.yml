@@ -1,0 +1,6 @@
+---
+applications:
+- name: SalesforceDesignSystem
+  memory: 2GB
+  command: npm start
+  timeout: 180
